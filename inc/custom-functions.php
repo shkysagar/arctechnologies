@@ -139,13 +139,10 @@ function book_landing_page_scripts() {
     $build               = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
     $suffix              = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	$query_args = array(
-		'family' => 'PT+Sans:400,400italic,700',
-		);
+
     wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.3.1', true );
     wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.3.1', true );
 
-    wp_enqueue_style( 'book-landing-page-google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
     wp_enqueue_style( 'book-landing-page-style', get_stylesheet_uri(), array(), BOOK_LANDING_PAGE_THEME_VERSION );
     if( book_landing_page_woocommerce_activated() ) {
     	wp_enqueue_style( 'book-landing-page-woocommerce-style', get_template_directory_uri(). '/css' . $build . '/woocommerce' . $suffix . '.css', array('book-landing-page-style'), BOOK_LANDING_PAGE_THEME_VERSION );

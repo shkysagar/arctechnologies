@@ -1,0 +1,34 @@
+//Variable Overrides
+
+$theme-colors: (
+        "primary": #00C6C6,
+        "secondary": #00C136
+);
+$font-family-sans-serif: 'Raleway', sans-serif;
+$body-color: #293341;
+$font-size-base: 0.9rem !default;
+$border-custom-color: #E9E9F0;
+
+
+
+
+// Bootstrap Sass Imports
+@import "node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600&display=swap');
+@import "node_modules/hover.css/scss/hover";
+
+
+@include media-breakpoint-up(lg) {
+    .container-fluid {
+        //padding-left: 5rem;
+        //padding-right: 5rem;
+    }
+}
+
+.btn {
+    border-radius: 0;
+    
+    &.btn-round {
+        border-radius: 50px;
+    }
+}
